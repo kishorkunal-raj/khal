@@ -8,6 +8,10 @@ python:
     - 3.7
     - 3.8
 
+arch:
+  - amd64
+  - ppc64le
+
 env:
     - BUILD=py
 
@@ -22,6 +26,22 @@ jobs:
       - python: 3.7
         env: BUILD=pytz201610
       - python: 3.7
+        env: BUILD=pytz201702
+        # Adding ppc64le jobs
+      - python: 3.7
+        arch: ppc64le
+        env: BUILD=style
+      - python: 3.7
+        arch: ppc64le
+        env: BUILD=docs
+      - python: 3.7
+        arch: ppc64le
+        env: BUILD=mypy
+      - python: 3.7
+        arch: ppc64le
+        env: BUILD=pytz201610
+      - python: 3.7
+        arch: ppc64le
         env: BUILD=pytz201702
 
 addons:
